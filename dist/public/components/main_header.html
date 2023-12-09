@@ -1,0 +1,61 @@
+<header class="s-header header">
+
+    <div class="header__top">
+        <div class="header__logo">
+            May there always be sunshine
+        </div>
+        <!-- toggles -->
+        <a href="#0" class="header__menu-toggle"><span>Menu</span></a>
+    </div>
+
+    <style>
+        header.s-header.header {
+            padding-left: 15px;
+            padding-right: 10px;
+        }
+
+        header.s-header.header nav.header__nav-wrap ul.header__nav li {
+            padding: 0px;
+        }
+
+        header.s-header.header nav.header__nav-wrap ul.header__nav li li {
+            font-size: 10px;
+        }
+
+        .year-heading {
+            color: orange;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        li>span.blog-title>a {
+            display: inline;
+            color: white;
+        }
+    </style>
+    <nav class="header__nav-wrap">
+
+        <ul class="header__nav">
+            <li class="has-children current">
+                <span class="blog-title"><a href="./index.html" title="">Blog</a>
+                    <!--
+                    &nbsp;&nbsp;
+                    <a href=".">EN</a> | <a href="./ru/">РУ</a>
+                    -->
+                </span>
+                <div onclick="selectYearOnPage(2023)" class="year-heading">2023</div>
+                <ul id="2023-articles" class="sub-menu" style="display: block;">
+                    <li><a href="../2023/The_causes_of_War.html">The causes of War</a></li>
+                </ul>
+                <!--
+                <div onclick="selectYearOnPage(2024)" class="year-heading">2024</div>
+                <ul id="2023-articles" class="sub-menu" style="display: block;">
+                    <li><a href="../2024/East-West_Conflict.html">East-West Conflict</a></li>
+                </ul>
+                -->
+            </li>
+        </ul> <!-- end header__nav -->
+
+    </nav> <!-- end header__nav-wrap -->
+
+</header>

@@ -1,0 +1,7 @@
+{
+    "name": "beyond-decentralized.world",
+    "version": "1.0.0",
+    "scripts": {
+        "dev": "cross-env NODE_ENV=development nodemon"
+    }
+}
