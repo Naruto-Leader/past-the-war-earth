@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const app = (0, express_1.default)();
 app.use(require('request-ip').mw());
+app.use(express_1.directory(__dirname + '/public'));
 // var urlencodedParser = bodyParser.urlencoded({ extended: false, parameterLimit: 2 })
 // export var all_actions_file = createWriteStream(__dirname + '/../logs/allActions.log', { flags: 'a' });
 // var blog_file = createWriteStream(__dirname + '/../logs/blog.log', { flags: 'a' });
