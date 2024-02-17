@@ -1,9 +1,21 @@
 function loadPostComponents() {
     let pathPrefix = '../'
-    if(window.location.href.indexOf('/ru/') > -1) {
+    let subdirPrefix = ''
+    if (
+        window.location.href.indexOf('/ru/Ideology_Governance_Economics/') > -1
+        || window.location.href.indexOf('/ru/direction/') > -1
+        || window.location.href.indexOf('/ru/history/') > -1
+    ) {
+        pathPrefix += '../../'
+        subdirPrefix = 'subdir_'
+    } else if (
+        window.location.href.indexOf('/direction/') > -1
+        || window.location.href.indexOf('/Ideology_Governance_Economics/') > -1
+        || window.location.href.indexOf('/history/') > -1) {
         pathPrefix += '../'
+        subdirPrefix = 'subdir_'
     }
-    loadIntoTag(pathPrefix + 'components/header.html', 'header');
+    loadIntoTag(pathPrefix + 'components/' + subdirPrefix + 'header.html', 'header');
     loadIntoTag(pathPrefix + 'components/summary.html', 'summary');
     loadIntoClass(pathPrefix + 'components/comments.html', 'comments-wrap');
     loadIntoTag(pathPrefix + 'components/footer.html', 'footer');
