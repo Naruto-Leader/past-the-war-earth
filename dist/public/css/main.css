@@ -2403,7 +2403,7 @@ input::-moz-focus-inner {
   text-transform: uppercase;
   letter-spacing: 3px;
   margin: 0;
-  padding: 0.8rem 0 2rem 1.2rem;
+  padding: 0 0 1.2rem 1.2rem;
 }
 
 .header__nav li ul a {
@@ -3694,7 +3694,7 @@ body.search-is-visible {
 /*# sourceMappingURL=main.css.map */
 
 a.highlighted {
-  color: white;
+  color: white !important;
   font-weight: bold;
 }
 

@@ -5,7 +5,8 @@
             Past the War Earth
         </div>
         <!-- toggles -->
-        <a href="#0" class="header__menu-toggle"><span>Menu</span></a>
+        <a href="#0"
+           class="header__menu-toggle"><span>Menu</span></a>
     </div>
 
     <style>
@@ -28,6 +29,12 @@
             font-weight: bold;
         }
 
+        .months-heading {
+            color: orange;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+
         li>span.blog-title>a {
             display: inline;
             color: white;
@@ -37,26 +44,51 @@
 
         <ul class="header__nav">
             <li class="has-children current">
-                <span class="blog-title"><a href="./index.html" title="">Blog</a>
+                <span class="blog-title"><a href="./index.html"
+                       title="">Blog</a>
                     &nbsp;&nbsp;
                     <a href=".">EN</a> | <a href="./ru/">РУ</a>
                 </span>
-                <div onclick="selectYearOnPage(2024)" class="year-heading">2024</div>
-                <ul id="2024-articles" class="sub-menu" style="display: block;">
-                    <li><a href="./2024/Middle_East_Peace-Integrated_Palestinian_Autonomy.html">Middle East Peace - Integrated Palestinian Autonomy</a></li>
-                    <li><a href="./2024/Sudan-Life_first_peace_After.html">Sudan: Life first, peace After</a></li>
-                    <li><a href="./2024/EU-CIS_stability-Poland.html">EU-CIS stability: Poland</a></li>
-                    <li><a href="./2024/history/Japan_and_Korea.html">Before Fusion: Japan & Korea</a></li>
-                    <li><a href="./2024/history/CIS.html">Before Fusion: CIS</a></li>
-                    <li><a href="./2024/history/EU.html">Before Fusion: EU</a></li>
-                    <li><a href="./2024/history/AUKUS.html">Before Fusion: AUKUS</a></li>
-                    <li><a href="./2024/Africa_+_Middle_East-Sudan.html">Africa - Middle East: <i>Sudan</i></a></li>
-                    <li><a href="./2024/history/China.html">Before Fusion: China</a></li>
-                    <li><a href="./2024/history/India.html">Before Fusion: India</a></li>
-                    <li><a href="./2024/Time_to_act_is_now.html">Time to act is Now!</a></li>
-                </ul>
-                <div onclick="selectYearOnPage(2023)" class="year-heading">2023</div>
-                <ul id="2023-articles" class="sub-menu" style="display: block;">
+                <div onclick="selectMonths(2024, 'March_April')"
+                     class="year-heading">2024</div>
+                <div id="2024-articles">
+                    <div onclick="selectMonths(2024, 'March_April')"
+                         class="months-heading">March - April</div>
+                    <ul id="2024-March_April-articles"
+                        class="sub-menu"
+                        style="display: block;">
+                        <li><a href="./2024/Finding_ways_to_stop_Famine.html">Finding ways to stop
+                                Famine</a></li>
+                        <li><a href="./2024/Middle_East_Peace-Integrated_Palestinian_Autonomy.html">Middle
+                                East Peace - Integrated Palestinian Autonomy</a></li>
+                        <li><a href="./2024/Sudan-Life_first_peace_After.html">Sudan: Life first,
+                                peace
+                                After</a></li>
+                        <li><a href="./2024/EU-CIS_stability-Poland.html">EU-CIS stability:
+                                Poland</a></li>
+                        <li><a href="./2024/history/Japan_and_Korea.html">Before Fusion: Japan &
+                                Korea</a></li>
+                        <li><a href="./2024/history/CIS.html">Before Fusion: CIS</a></li>
+                        <li><a href="./2024/history/EU.html">Before Fusion: EU</a></li>
+                        <li><a href="./2024/history/AUKUS.html">Before Fusion: AUKUS</a></li>
+                        <li><a href="./2024/Africa_+_Middle_East-Sudan.html">Africa - Middle East:
+                                <i>Sudan</i></a></li>
+                    </ul>
+                    <div onclick="selectMonths(2024, 'January_February')"
+                         class="months-heading">January - February</div>
+                    <ul id="2024-January_February-articles"
+                        class="sub-menu"
+                        style="display: block;">
+                        <li><a href="./2024/history/China.html">Before Fusion: China</a></li>
+                        <li><a href="./2024/history/India.html">Before Fusion: India</a></li>
+                        <li><a href="./2024/Time_to_act_is_now.html">Time to act is Now!</a></li>
+                    </ul>
+                </div>
+                <div onclick="selectYear(2023)"
+                     class="year-heading">2023</div>
+                <ul id="2023-articles"
+                    class="sub-menu"
+                    style="display: block;">
                     <li><a href="./2023/The_causes_of_War.html">The causes of War</a></li>
                 </ul>
             </li>

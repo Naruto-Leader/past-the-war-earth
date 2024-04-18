@@ -292,18 +292,60 @@
 
 })(jQuery);
 
-function selectYear(year) {
-    for (let i = 2019; i < 2023; i++) {
-        document.getElementById(i + '-articles').style.display = 'none'
+var monthsArray = [
+    'January_February',
+    'March_April',
+    'May_June',
+    'July_August',
+    'September_October',
+    'November_December'
+]
+var monthsMap = {}
+for(let i = 0; i < monthsArray.length; i++) {
+    monthsMap[monthsArray[i]] = i
+}
+
+function selectMonthsOnly(year, months, displayDefault, displayAlternate) {
+    var monthIndex = monthsMap[months]
+    var selectedMonths = ''
+    for (let i = 0; i < 6; i++) {
+        let display = displayDefault
+        if(i == monthIndex) {
+            display = displayAlternate
+            selectedMonths = monthsArray[i]
+        }
+        var monthsBlock = document.getElementById(year + '-' + monthsArray[i] + '-articles')
+        if(monthsBlock) {
+            monthsBlock.style.display = display
+        }
+    }
+
+    return selectedMonths
+}
+
+function selectYearOnPage(year) {
+    for (let i = 2023; i < 2128; i++) {
+        let yearArticles = document.getElementById(i + '-articles')
+        if (yearArticles) {
+            yearArticles.style.display = 'none'
+        }
     }
 
     document.getElementById(year + '-articles').style.display = 'block'
+
+    selectMonthsOnly(year, 0, 'block', 'block')
+}
+function selectYear(year) {
+    selectYearOnPage(year)
     document.getElementById(year + '-last-article').scrollIntoView()
 }
-function selectYearOnPage(year) {
-    for (let i = 2019; i < 2023; i++) {
-        document.getElementById(i + '-articles').style.display = 'none'
-    }
 
-    document.getElementById(year + '-articles').style.display = 'block'
+function selectMonthsOnPage(year, months) {
+    selectYearOnPage(year)
+
+    return selectMonthsOnly(year, months, 'none', 'block')
+}
+function selectMonths(year, months) {
+    var selectedMonths = selectMonthsOnPage(year, months)
+    document.getElementById(year + '-' + selectedMonths + '-last-article').scrollIntoView()
 }

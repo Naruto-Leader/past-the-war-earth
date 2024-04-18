@@ -35,18 +35,32 @@ function loadContent(url, docMethod, selector) {
         .then(htmlText => {
             var elementList = document[docMethod](selector)
             if (elementList.length) {
-                elementList[0].outerHTML = htmlText;
+                elementList[0].outerHTML = htmlText
             }
         });
 }
 
 function updateMenu(
     articleId,
-    year
+    year,
+    months,
+    subDirectory
 ) {
-    const articleMenuItem = document.querySelectorAll('[href="../' + year + '/' + articleId + '.html"]')[0];
-    articleMenuItem.classList.add('highlighted')
-    selectYearOnPage(year)
+    setTimeout(function () {
+        setTimeout(function () {
+            let prefix = '../' + year
+            if (subDirectory) {
+                prefix = '../../' + year + '/' + subDirectory
+            }
+            const articleMenuItem = document.querySelectorAll('[href="' + prefix + '/' + articleId + '.html"]')[0]
+            articleMenuItem.classList.add('highlighted')
+            if(months) {
+                selectMonthsOnPage(year, months)
+            } else {
+                selectYearOnPage(year)
+            }
+        }, 250)
+    }, 250)
 }
 
 loadPostComponents();
