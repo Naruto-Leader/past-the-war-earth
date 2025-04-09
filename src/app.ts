@@ -10,7 +10,7 @@ app.use(express.static('public', {
     if (mime.lookup(path) === 'video/mp4') {
       res.setHeader('Cache-Control', 'public, max-age=31536000')
     }
-  }
+  }       
 }))
 app.use('/', serveIndex('public'));
 
